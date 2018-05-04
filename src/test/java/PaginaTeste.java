@@ -22,14 +22,27 @@ public class PaginaTeste {
     }
 
     @Test
-    public void test()
+    public void testLoginCorrectStudent()
     {
         myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
         
         pag.loga();
         pag.preencheDados("student1@gmail.com", "pass");
         pag.acessaLoginModal();
+
         //WebElement ddd;
+        //assertNotNull(ddd);
+    }
+    
+    @Test
+    public void testLoginCorrectTeacher()
+    {
+        myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
+        
+        pag.loga();
+        pag.preencheDados("teacher@gmail.com", "pass");
+        pag.acessaLoginModal();
+
         //assertNotNull(ddd);
     }
 }
