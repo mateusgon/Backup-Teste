@@ -1,3 +1,5 @@
+package testlogin;
+
 
 import testlogin.myFirstTest;
 import org.junit.BeforeClass;
@@ -19,6 +21,7 @@ public class PaginaTeste {
         System.setProperty("webdriver.gecko.driver", "/ice/Downloads/geckodriver");
         driver = (WebDriver) new FirefoxDriver();
         driver.get("https://atlantis.isti.cnr.it:5000/");
+        System.out.print("Escolher teste");
     }
 
     @Test
@@ -28,6 +31,18 @@ public class PaginaTeste {
         
         pag.loga();
         pag.preencheDados("student1@gmail.com", "pass");
+        pag.acessaLoginModal();
+
+        //WebElement ddd;
+        //assertNotNull(ddd);
+    }
+    
+    public void testLoginInCorrectStudent()
+    {
+        myFirstTest pag = PageFactory.initElements(driver, myFirstTest.class);
+        
+        pag.loga();
+        pag.preencheDados("student1@gmail.com", "passIncorret");
         pag.acessaLoginModal();
 
         //WebElement ddd;
